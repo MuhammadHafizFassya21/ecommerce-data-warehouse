@@ -1,0 +1,10 @@
+table_name,file_name,csv_row_count,database_row_count,status
+raw.customers,olist_customers_dataset.csv,99441,99441,PASS
+raw.geolocation,olist_geolocation_dataset.csv,1000163,1000163,PASS
+raw.order_items,olist_order_items_dataset.csv,112650,112650,PASS
+raw.order_payments,olist_order_payments_dataset.csv,103886,103886,PASS
+raw.order_reviews,olist_order_reviews_dataset.csv,99224,99224,PASS
+raw.orders,olist_orders_dataset.csv,99441,99441,PASS
+raw.products,olist_products_dataset.csv,32951,32951,PASS
+raw.sellers,olist_sellers_dataset.csv,3095,3095,PASS
+raw.category_translation,product_category_name_translation.csv,71,71,PASS

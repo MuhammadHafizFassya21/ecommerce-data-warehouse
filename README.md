@@ -115,3 +115,35 @@ In this stage, raw data is transformed into cleaned staging tables. The staging 
 - Added delivery performance fields:
   - delivery_days
   - is_late_delivery
+
+  ## Stage 4: Warehouse Layer
+
+In this stage, cleaned staging data is transformed into analytical warehouse tables using a star schema approach.
+
+### Dimension Tables
+
+- warehouse.dim_customers
+- warehouse.dim_sellers
+- warehouse.dim_products
+- warehouse.dim_date
+
+### Fact Tables
+
+- warehouse.fact_orders
+- warehouse.fact_order_items
+
+### Key Features
+
+- Created surrogate keys for dimension tables
+- Created date dimension for time-based analysis
+- Created order-level fact table
+- Created item-level fact table
+- Added indexes for commonly used analytical joins
+- Validated warehouse row counts and duplicate keys
+
+### Supported Analysis
+
+- Monthly order and revenue trend
+- Top product categories by sales
+- Seller late delivery performance
+- Relationship between late delivery and review score

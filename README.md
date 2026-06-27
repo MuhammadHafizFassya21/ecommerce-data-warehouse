@@ -90,3 +90,28 @@ ecommerce-data-warehouse/
 - Generated raw dataset profile
 - Loaded raw CSV files into PostgreSQL `raw` schema
 - Validated row counts between CSV files and PostgreSQL tables
+
+## Stage 3: Staging Layer and Data Cleaning
+
+In this stage, raw data is transformed into cleaned staging tables. The staging layer standardizes data types, cleans text fields, converts date columns, handles duplicate records, and prepares the data for warehouse modeling.
+
+### Staging Tables
+
+- staging.customers
+- staging.sellers
+- staging.orders
+- staging.order_items
+- staging.order_payments
+- staging.order_reviews
+- staging.products
+- staging.geolocation
+
+### Key Transformations
+
+- Converted date fields into timestamp format
+- Converted price, freight, and payment fields into numeric format
+- Standardized city and state names
+- Joined product category translation
+- Added delivery performance fields:
+  - delivery_days
+  - is_late_delivery

@@ -181,3 +181,34 @@ In this stage, warehouse tables are transformed into business-ready data marts. 
 5. Which customer states generate the highest revenue?
 6. What payment methods are most commonly used?
 7. Does late delivery affect customer review score?
+
+## Stage 6: Business Insight and Query Analysis
+
+In this stage, analytical SQL queries are created to generate business insights from the data mart layer.
+
+### Analysis Areas
+
+- Business KPI overview
+- Monthly sales and revenue trend
+- Month-over-month revenue growth
+- Product category performance
+- Seller delivery performance
+- Customer location analysis
+- Payment method analysis
+- Delivery and review relationship
+
+### Output Files
+
+- `sql/09_business_analysis_queries.sql`
+- `docs/business_insights.md`
+- `docs/dashboard_requirements.md`
+
+### Key Business Questions
+
+1. What is the overall business performance?
+2. How do orders and revenue change over time?
+3. Which product categories generate the highest sales?
+4. Which sellers have the highest late delivery rate?
+5. Which customer locations generate the highest revenue?
+6. What payment methods are most commonly used?
+7. Does late delivery affect customer review score?

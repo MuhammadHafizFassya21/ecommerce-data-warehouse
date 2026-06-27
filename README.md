@@ -147,3 +147,37 @@ In this stage, cleaned staging data is transformed into analytical warehouse tab
 - Top product categories by sales
 - Seller late delivery performance
 - Relationship between late delivery and review score
+
+## Stage 5: Data Mart Layer
+
+In this stage, warehouse tables are transformed into business-ready data marts. The mart layer is designed to support dashboard development and business analysis.
+
+### Data Mart Tables
+
+- mart.monthly_sales_summary
+- mart.product_category_performance
+- mart.seller_delivery_performance
+- mart.customer_state_summary
+- mart.payment_method_summary
+- mart.review_delivery_summary
+
+### Key Business Metrics
+
+- Monthly revenue
+- Monthly order trend
+- Average order value
+- Product category sales
+- Seller late delivery rate
+- Customer state revenue
+- Payment method usage
+- Relationship between delivery delay and review score
+
+### Business Questions Answered
+
+1. How many orders are created each month?
+2. What is the monthly revenue trend?
+3. Which product categories generate the highest sales?
+4. Which sellers have the highest late delivery rate?
+5. Which customer states generate the highest revenue?
+6. What payment methods are most commonly used?
+7. Does late delivery affect customer review score?

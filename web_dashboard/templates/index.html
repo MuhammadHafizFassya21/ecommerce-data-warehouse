@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Dasbor Analisis E-Commerce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header class="dashboard-header">
+        <div>
+            <h1>Dasbor Analisis E-Commerce</h1>
+            <p>Monitoring penjualan, pengiriman, seller, pelanggan, pembayaran, dan ulasan pelanggan</p>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <section class="filter-card">
+    <div>
+        <h3>Filter Analisis</h3>
+        <p>Pilih tahun dan bulan untuk melihat performa e-commerce pada periode tertentu.</p>
+    </div>
+
+    <div class="filter-controls">
+        <div class="filter-group">
+            <label for="yearFilter">Tahun</label>
+            <select id="yearFilter">
+                <option value="">Semua Tahun</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="monthFilter">Bulan</label>
+            <select id="monthFilter">
+                <option value="">Semua Bulan</option>
+            </select>
+        </div>
+
+        <button id="applyFilterButton" class="btn-primary">Terapkan Filter</button>
+        <button id="resetFilterButton" class="btn-secondary">Reset</button>
+    </div>
+</section>
+
+        <!-- KPI Section -->
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <p>Total Pesanan</p>
+                <h2 id="totalOrders">-</h2>
+            </div>
+
+            <div class="kpi-card">
+                <p>Total Pendapatan</p>
+                <h2 id="totalRevenue">-</h2>
+            </div>
+
+            <div class="kpi-card">
+                <p>Rata-rata Nilai Pesanan</p>
+                <h2 id="averageOrderValue">-</h2>
+            </div>
+
+            <div class="kpi-card">
+                <p>Rata-rata Hari Pengiriman</p>
+                <h2 id="averageDeliveryDays">-</h2>
+            </div>
+
+            <div class="kpi-card">
+                <p>Tingkat Keterlambatan</p>
+                <h2 id="lateDeliveryRate">-</h2>
+            </div>
+
+            <div class="kpi-card">
+                <p>Rata-rata Skor Ulasan</p>
+                <h2 id="averageReviewScore">-</h2>
+            </div>
+        </section>
+
+        <!-- Chart Section -->
+        <section class="chart-grid">
+
+            <div class="chart-card chart-wide">
+                <div class="chart-header">
+                    <h3>Tren Pendapatan Bulanan</h3>
+                    <p>Menampilkan perubahan total pendapatan berdasarkan bulan</p>
+                </div>
+                <canvas id="monthlyRevenueChart"></canvas>
+            </div>
+
+            <div class="chart-card chart-wide">
+                <div class="chart-header">
+                    <h3>Tren Jumlah Pesanan Bulanan</h3>
+                    <p>Menampilkan jumlah pesanan dari waktu ke waktu</p>
+                </div>
+                <canvas id="monthlyOrdersChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>10 Kategori Produk Teratas</h3>
+                    <p>Berdasarkan total penjualan produk</p>
+                </div>
+                <canvas id="productCategoryChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Kontribusi Metode Pembayaran</h3>
+                    <p>Berdasarkan total nilai pembayaran</p>
+                </div>
+                <canvas id="paymentMethodChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Wilayah Pelanggan dengan Pendapatan Tertinggi</h3>
+                    <p>Berdasarkan total pendapatan per state pelanggan</p>
+                </div>
+                <canvas id="customerStateChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Skor Ulasan Berdasarkan Status Pengiriman</h3>
+                    <p>Membandingkan ulasan pelanggan pada pengiriman tepat waktu dan terlambat</p>
+                </div>
+                <canvas id="reviewDeliveryChart"></canvas>
+            </div>
+
+        </section>
+
+        <!-- Seller Risk Table -->
+        <section class="table-card">
+            <div class="chart-header">
+                <h3>Seller dengan Risiko Keterlambatan Tertinggi</h3>
+                <p>Seller dengan jumlah item terjual minimal 10 dan tingkat keterlambatan tertinggi</p>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Seller</th>
+                            <th>Kota</th>
+                            <th>State</th>
+                            <th>Total Item</th>
+                            <th>Total Penjualan</th>
+                            <th>Tingkat Terlambat</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sellerRiskTable">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="dashboard-footer">
+        <p>Project Data Engineering — E-Commerce Data Warehouse & Analytics Dashboard</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

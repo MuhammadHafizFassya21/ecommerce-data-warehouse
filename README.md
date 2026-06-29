@@ -277,3 +277,23 @@ SQL Data Mart Layer
 Flask API
     ↓
 Web Analytics Dashboard
+
+
+
+```markdown
+## Stage 9: Quality Improvement and Automation
+
+This stage improves the project by adding automation, logging, data quality checks, dashboard health check, and dashboard refresh functionality.
+
+### Added Features
+
+- SQL pipeline runner
+- Data quality check script
+- Pipeline execution logging
+- Dashboard API health check
+- Dashboard refresh button
+
+### Run SQL Pipeline
+
+```bash
+python scripts/run_sql_pipeline.py

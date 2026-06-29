@@ -397,6 +397,10 @@ function pasangEventFilter() {
         document.getElementById("monthFilter").value = "";
         await muatDashboard();
     });
+
+    document.getElementById("refreshDashboardButton").addEventListener("click", async () => {
+        await muatDashboard();
+    });
 }
 
 async function mulaiDashboard() {

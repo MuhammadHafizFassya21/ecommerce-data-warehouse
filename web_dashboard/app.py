@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, render_template, request
+from sqlalchemy import text
 
 from db import engine
 from queries import (
@@ -80,6 +81,23 @@ def api_review_delivery():
     data = get_review_delivery_summary(engine, year, month)
     return jsonify(data)
 
+@app.route("/api/health")
+def api_health():
+    try:
+        with engine.connect() as connection:
+            database_name = connection.execute(text("SELECT current_database();")).scalar()
+
+        return jsonify({
+            "status": "healthy",
+            "database": database_name,
+            "message": "Dashboard API is connected to PostgreSQL successfully."
+        })
+
+    except Exception as error:
+        return jsonify({
+            "status": "unhealthy",
+            "message": str(error)
+        }), 500
 
 if __name__ == "__main__":
     app.run(debug=True)

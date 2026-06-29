@@ -212,3 +212,68 @@ In this stage, analytical SQL queries are created to generate business insights 
 5. Which customer locations generate the highest revenue?
 6. What payment methods are most commonly used?
 7. Does late delivery affect customer review score?
+
+
+---
+
+# TAHAP 8.6 — Update README GitHub
+
+README adalah bagian paling penting. Recruiter biasanya melihat README dulu.
+
+Tambahkan struktur seperti ini di `README.md`.
+
+```markdown
+# E-Commerce Data Warehouse & Analytics Dashboard
+
+## Project Overview
+
+This project is an end-to-end data engineering project that builds an e-commerce data warehouse and a custom web analytics dashboard. The project processes raw e-commerce data into structured analytical layers and presents business insights through a Flask-based dashboard.
+
+## Business Problem
+
+E-commerce companies often store order, customer, seller, product, payment, delivery, and review data in separate systems. This makes it difficult for business teams to monitor sales performance, delivery issues, seller reliability, customer location performance, payment behavior, and customer satisfaction in a centralized way.
+
+## Project Objective
+
+The objective of this project is to build a data pipeline and analytical platform that can:
+
+1. Ingest raw e-commerce data.
+2. Store data in PostgreSQL.
+3. Clean and standardize data in a staging layer.
+4. Build fact and dimension tables in a warehouse layer.
+5. Create business-ready data marts.
+6. Provide business insights through SQL analysis.
+7. Display insights in a custom web analytics dashboard.
+
+## Tech Stack
+
+- Python
+- PostgreSQL
+- SQL
+- SQLAlchemy
+- Flask
+- HTML
+- CSS
+- JavaScript
+- Chart.js
+- DBeaver
+- GitHub
+
+## Data Pipeline Architecture
+
+```text
+CSV Dataset
+    ↓
+Python Ingestion
+    ↓
+PostgreSQL Raw Layer
+    ↓
+SQL Staging Layer
+    ↓
+SQL Warehouse Layer
+    ↓
+SQL Data Mart Layer
+    ↓
+Flask API
+    ↓
+Web Analytics Dashboard
